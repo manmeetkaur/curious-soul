@@ -1,3 +1,7 @@
+"""
+This is an example of a custom operator created by creating a Derived Class from 
+the Abstract BaseOperator Class
+"""
 import os
 from airflow.providers.google.cloud.hooks.bigquery import BigQueryHook
 from airflow.models.baseoperator import BaseOperator

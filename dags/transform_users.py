@@ -1,3 +1,7 @@
+"""
+This example demonstrates how we can create our own Custom Operators in Airflow using
+BaseOperator and by extending an existing Operator as well.
+"""
 import os
 import json
 from datetime import datetime
@@ -19,6 +23,9 @@ default_args = {
     'params': {'pipeline': 'users'}
 }
 
+"""
+This is an example of extending the functionality of an existing Operator in Airflow
+"""
 class HttpOperator(SimpleHttpOperator):
     def __init__(self, local_path, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -79,6 +86,9 @@ def users_transform():
         schema_name='airflow_core'
     )
 
+    """
+    Below is the redundant code that we have included in a custom operator called SqlTransformOperator
+    """
     # @task
     # def transform():
     #     print(get_current_context())
